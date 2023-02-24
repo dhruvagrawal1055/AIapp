@@ -1,2 +1,2 @@
 String apiKey =
-    '<REDACTED> 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';
+    '<REDACTED> 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';
