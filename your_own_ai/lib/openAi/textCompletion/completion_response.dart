@@ -39,7 +39,7 @@ class CompletionsResponse {
 
     // Get the text of the first completion
     String firstCompletion = choices[0]['text'];
-
+    // debug Print('firstCompletion: $firstCompletion');
     return CompletionsResponse(
       id: responseBody['userId'],
       object: responseBody['id'],

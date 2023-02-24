@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:your_own_ai/Screens/demo.dart';
 import 'package:your_own_ai/Screens/route.dart';
+import 'package:your_own_ai/openAi/ImageGeneration/image_apicall.dart';
 import 'package:your_own_ai/openAi/textCompletion/completionsapi.dart';
 
+import '../openAi/ImageGeneration/image_response.dart';
 import '../openAi/textCompletion/completionsapi.dart';
 
 /// Controller for [DailyForecastRoute].
@@ -28,8 +30,9 @@ class DailyForecastController extends State<DailyForecastRoute> {
 
         return FutureBuilder(
           future:
-              CompletionsApi.getForecast(constraints.maxWidth < 300 ? 6 : 9),
-          builder: (BuildContext context, AsyncSnapshot<String?> forecast) {
+              // CompletionsApi.getForecast(constraints.maxWidth < 300 ? 6 : 9),
+              ImageCall.getImage(),
+          builder: (BuildContext context, AsyncSnapshot<ImageResponse> sstr) {
             return DailyForecastViewPhone(this);
           },
         );

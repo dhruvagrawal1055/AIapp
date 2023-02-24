@@ -20,4 +20,27 @@ class ImageResponse {
 
 //   );
 // }
+  factory ImageResponse.fromJson(Map<String, dynamic> json) => ImageResponse(
+        created: json["created"],
+        data: List<img_url>.from(json["data"].map((x) => img_url.fromJson(x))),
+      );
+
+  Map<String, dynamic> toJson() => {
+        "created": created,
+        "data": List<dynamic>.from(data!.map((x) => x.toJson())),
+      };
+}
+
+class img_url {
+  img_url({
+    this.url,
+  });
+  String? url;
+  factory img_url.fromJson(Map<String, dynamic> json) => img_url(
+        url: json["url"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "url": url,
+      };
 }

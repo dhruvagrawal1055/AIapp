@@ -60,7 +60,7 @@ class CompletionsApi {
 
     CompletionsRequest request = CompletionsRequest(
       model: "text-davinci-003",
-      prompt: "hlo,how are you today?",
+      prompt: "what should i eat for dinner today?",
       maxTokens: maxTokens,
       temperature: temp,
     );
@@ -84,6 +84,7 @@ class CompletionsApi {
         CompletionsResponse.fromResponse(response);
 
     // Save the forecast
+    // debugPrint(completionsResponse.choices![3]['text']);
     saveForecast(completionsResponse);
 
     return completionsResponse;
