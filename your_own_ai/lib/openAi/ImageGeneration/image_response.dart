@@ -11,13 +11,13 @@ class ImageResponse {
     required this.data,
   });
 
-factory ImageResponse.fromResponse(Response response ) {
-     Map<String, dynamic> responseBody = json.decode(response.body);
-     List<dynamic> data = responseBody['data'];
-  return ImageResponse(
-    created: json['created'] as int,
-    data: json['data'] as List<dynamic>?,
+// factory ImageResponse.fromResponse(Response response ) {
+//      Map<String, dynamic> responseBody = json.decode(response.body);
+//      List<dynamic> data = responseBody['data'];
+//   return ImageResponse(
+//     created: json['created'] as int,
+//     data: json['data'] as List<dynamic>?,
 
-  );
-}
+//   );
+// }
 }

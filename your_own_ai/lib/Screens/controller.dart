@@ -3,6 +3,8 @@ import 'package:your_own_ai/Screens/demo.dart';
 import 'package:your_own_ai/Screens/route.dart';
 import 'package:your_own_ai/openAi/textCompletion/test.dart';
 
+import '../openAi/textCompletion/completionsapi.dart';
+
 /// Controller for [DailyForecastRoute].
 ///
 /// This controller handles three operations:
