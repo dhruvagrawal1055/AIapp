@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:your_own_ai/Screens/demo.dart';
 import 'package:your_own_ai/Screens/route.dart';
-import 'package:your_own_ai/openAi/textCompletion/test.dart';
+import 'package:your_own_ai/openAi/textCompletion/completionsapi.dart';
 
 import '../openAi/textCompletion/completionsapi.dart';
 
