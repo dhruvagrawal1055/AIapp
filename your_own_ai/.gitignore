@@ -10,6 +10,7 @@
 .svn/
 migrate_working_dir/
 your_own_ai/lib/openAi/apikey.dart
+your_own_ai/lib/openAi/temp.dart
 
 
 # IntelliJ related
