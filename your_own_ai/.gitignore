@@ -9,6 +9,8 @@
 .history
 .svn/
 migrate_working_dir/
+your_own_ai/lib/openAi/apikey.dart
+
 
 # IntelliJ related
 *.iml
