@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       // home: loginScreen(),
       // home: Home(),
-      home:img_home(),
+      home:Home(),
       // home: chat_home(),
     );
   }
