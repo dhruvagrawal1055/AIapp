@@ -14,32 +14,17 @@ class _chat_homeState extends State<chat_home> {
   var output = '';
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: Colors.grey,
-    fontFamily: 'Georgia',
-    textTheme: const TextTheme(
-      displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-      titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-      bodyMedium: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-    ),
-  ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Chat Home"),
-        ),
-        body: Center(
-          child: Column(
-            children: [
-              TextField(
-                controller: textEditingController,
-    
-                decoration: InputDecoration(
-                  border:OutlineInputBorder(),
-                  hintText: "start chat", 
-                  hintStyle: TextStyle(color: Colors.grey[400]),
-                ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Chat Home"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            TextField(
+              controller: textEditingController,
+              decoration: InputDecoration(
+                hintText: "Enter Text",
               ),
             ),
             ElevatedButton(
