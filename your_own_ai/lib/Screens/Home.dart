@@ -26,10 +26,10 @@ class Home extends StatelessWidget {
           children: [
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>chat_home()));
-            }, child: Text("Chat Home")),
+            }, child: Text("Chat with Home")),
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>img_home()));
-            }, child: Text("Image Home")),
+            }, child: Text("Image Generator")),
           ],
         )
       )),
