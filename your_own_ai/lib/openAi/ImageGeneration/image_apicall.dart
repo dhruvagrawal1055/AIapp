@@ -20,7 +20,7 @@ class ImageCall {
     var response = await http.post(imageEnd,
         headers: headers,
         body: jsonEncode(
-            {"prompt": query, "n": 1, "size": "256x256"}));
+            {"prompt": query, "n": 1, "size": "1024x1024"}));
     if (response.statusCode != 200) {
       
       debugPrint("failed to load,${response.statusCode}");

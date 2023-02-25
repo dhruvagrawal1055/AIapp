@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
     String image = '';
     var isloaded = false;
     return MaterialApp(
-      home: loginScreen(),
+      home: Home(),
       // home: chat_home(),
     );
   }

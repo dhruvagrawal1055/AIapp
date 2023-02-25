@@ -7,20 +7,33 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(child: Center(child: 
-      Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>chat_home()));
-          }, child: Text("Chat Home")),
-          ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>img_home()));
-          }, child: Text("Image Home")),
-        ],
-      )
-    )),
+    return MaterialApp(
+      theme: ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: Colors.grey,
+    fontFamily: 'Georgia',
+    textTheme: const TextTheme(
+      displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+      titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+      bodyMedium: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+    ),
+  ),
+      home: Scaffold(
+        body: SafeArea(
+          child: Center(child: 
+        Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>chat_home()));
+            }, child: Text("Chat Home")),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>img_home()));
+            }, child: Text("Image Home")),
+          ],
+        )
+      )),
+      ),
     );
   }
 }

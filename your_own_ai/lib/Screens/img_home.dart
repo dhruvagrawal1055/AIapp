@@ -62,70 +62,82 @@ class _img_homeState extends State<img_home> {
   String image = '';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("Image Generation"),
-        ),
-        body: Column(
-          children: [
-            Expanded(
-                child: Container(
-                    color: Colors.red,
-                    child: Column(
-                      children: [
-                        // Row(
-                        //   children: [
-                        //     // TextField(
-                        //     //   controller: textfieldController,
-                        //     //   decoration: InputDecoration(
-                        //     //     hintText: "Enter Text",
-                        //     //     // border: OutlineInputBorder(
-                        //     //     //   borderRadius: BorderRadius.circular(10),
-                        //     //     // ),
-                        //     //   ))
-                        TextField(
-                            controller: textfieldController,
-                            decoration: InputDecoration(
-                              hintText: "Enter Text",
-                              // border: OutlineInputBorder(
-                              //   borderRadius: BorderRadius.circular(10),
-                              // ),
-                            ))
-                      ],
-                    ))),
-            ElevatedButton(
+    return MaterialApp(
+      theme: ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: Colors.grey,
+    fontFamily: 'Georgia',
+    textTheme: const TextTheme(
+      displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+      titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+      bodyMedium: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+    ),
+  ),
+      home: Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text("Image Generation"),
+          ),
+          body: Column(
+            children: [
+              Expanded(
+                  child: Container(
+                      color: Colors.grey,
+                      child: Column(
+                        children: [
+                          // Row(
+                          //   children: [
+                          //     // TextField(
+                          //     //   controller: textfieldController,
+                          //     //   decoration: InputDecoration(
+                          //     //     hintText: "Enter Text",
+                          //     //     // border: OutlineInputBorder(
+                          //     //     //   borderRadius: BorderRadius.circular(10),
+                          //     //     // ),
+                          //     //   ))
+                          TextField(
+                              controller: textfieldController,
+                              decoration: InputDecoration(
+                                hintText: "Write Image name",
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ))
+                        ],
+                      ))),
+              ElevatedButton(
+                  onPressed: () async {
+                    image = await ImageCall.getImage(textfieldController.text);
+                    setState(() {
+                      image = image;
+                    });
+                  },
+                  child: Text("Generate Image")),
+              ElevatedButton(
                 onPressed: () async {
-                  image = await ImageCall.getImage(textfieldController.text);
-                  setState(() {
-                    image = image;
-                  });
+                  await shareImg();
                 },
-                child: Text("Generate Image")),
-            ElevatedButton(
-              onPressed: () async {
-                await shareImg();
-              },
-              child: Text("Share Image"),
-            ),
-            ElevatedButton(
-              onPressed: ()  {
-                downloadImg();
-              },
-              child: Text("Download Image"),
-            ),
-            Expanded(
-                flex: 4,
-                child: Container(
-                  color: Colors.blue,
-                  child: Screenshot(
-                    controller: screenshotcontroller,
-                    child: image == ''
-                        ? const CircularProgressIndicator()
-                        : Image(image: NetworkImage(image)),
-                  ),
-                ))
-          ],
-        ));
+                child: Text("Share Image"),
+              ),
+              ElevatedButton(
+                onPressed: ()  {
+                  downloadImg();
+                },
+                child: Text("Download Image"),
+              ),
+              Expanded(
+                  flex: 3,
+                  child: Container(
+                    color: Colors.black,
+                    child: Screenshot(
+                      controller: screenshotcontroller,
+                      child: image == ''
+                          ? Image(image: AssetImage("assets/image/a.gif"))
+                          : Image(image: NetworkImage(image)),
+                    ),
+                  ))
+            ],
+          )),
+    );
   }
 }
