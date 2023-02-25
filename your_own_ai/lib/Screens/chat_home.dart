@@ -56,52 +56,64 @@ class _chat_homeState extends State<chat_home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Chat Bot'),
-      ),
-      backgroundColor: Colors.cyan[100],
-      body: Column(
-        children: [
-          Flexible(
-              child: ListView.builder(
-            padding: const EdgeInsets.all(8.0),
-            reverse: true,
-            itemBuilder: (_, int index) => _msg[index],
-            itemCount: _msg.length,
-          )),
-          const Divider(height: 1.0),
-          Container(
-            decoration: BoxDecoration(color: Theme.of(context).cardColor),
-            child: IconTheme(
-              data: IconThemeData(color: Theme.of(context).cardColor),
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 8.0),
-                //color: Colors.grey[300],
-                child: Row(
-                  children: [
-                    Flexible(
-                      child: TextField(
-                        controller: _txtController,
-                        onSubmitted: handleSubmitted,
-                        decoration: const InputDecoration.collapsed(
-                            hintText: 'Send a message'),
+    return MaterialApp(
+      theme: ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: Colors.grey,
+    fontFamily: 'Georgia',
+    textTheme: const TextTheme(
+      displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+      bodyMedium: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+    ),
+  ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Chat Bot'),
+        ),
+        backgroundColor: Colors.grey,
+        body: Column(
+          children: [
+            Flexible(
+                child: ListView.builder(
+              padding: const EdgeInsets.all(8.0),
+              reverse: true,
+              itemBuilder: (_, int index) => _msg[index],
+              itemCount: _msg.length,
+            )),
+            const Divider(height: 1.0),
+            Container(
+              decoration: BoxDecoration(color: Colors.black),
+              child: IconTheme(
+                data: IconThemeData(color: Theme.of(context).cardColor),
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                  //color: Colors.grey[300],
+                  child: Row(
+                    children: [
+                      Flexible(
+                        child: TextField(
+                          
+                          controller: _txtController,
+                          onSubmitted: handleSubmitted,
+                          decoration: const InputDecoration.collapsed(
+                              hintText: 'Send a message'),
+                        ),
                       ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                      child: IconButton(
-                        icon: const Icon(Icons.send),
-                        onPressed: () => handleSubmitted(_txtController.text),
-                        color: Colors.green,
-                      ),
-                    )
-                  ],
+                      Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                        child: IconButton(
+                          icon: const Icon(Icons.send),
+                          onPressed: () => handleSubmitted(_txtController.text),
+                          color: Colors.green,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -158,7 +170,7 @@ class Message extends StatelessWidget {
               backgroundColor: Colors.grey,
               child: Text('U',
                   style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white)))),
+                      fontWeight: FontWeight.bold, color: Colors.black)))),
     ];
   }
 
