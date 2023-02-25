@@ -14,13 +14,13 @@ class ImageCall {
     'Content-Type': 'application/json',
     'Authorization': 'Bearer $apiImg',
   };
-  static getImage() async {
+  static getImage(String query) async {
     // ImageRequest request = ImageRequest(
     //     prompt: "Monkey on a ship", maxTokens: 1, size: "1024x1024");
     var response = await http.post(imageEnd,
         headers: headers,
         body: jsonEncode(
-            {"prompt": "Monkey on a ship", "n": 1, "size": "256x256"}));
+            {"prompt": query, "n": 1, "size": "256x256"}));
     if (response.statusCode != 200) {
       
       debugPrint("failed to load,${response.statusCode}");
