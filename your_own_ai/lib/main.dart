@@ -30,8 +30,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: loginScreen(),
-      // home: Home(),
-      home:Home(),
+      home: Home(),
+      // home:img_home(),
       // home: chat_home(),
     );
   }
