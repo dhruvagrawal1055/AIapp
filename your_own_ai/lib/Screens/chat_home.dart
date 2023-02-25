@@ -41,21 +41,18 @@ class _chat_homeState extends State<chat_home> {
                   hintStyle: TextStyle(color: Colors.grey[400]),
                 ),
               ),
-              SizedBox(
-                height: 30,
-              ),
-              ElevatedButton(
-                  onPressed: () async {
-                    output = await CompletionsApi.getNewForecast(
-                        textEditingController.text.toString(), 20);
-                    setState(() {
-                      output = output;
-                    });
-                  },
-                  child: Text("Get output")),
-              Text(output == "" ? "Start Conversation" : output),
-            ],
-          ),
+            ),
+            ElevatedButton(
+                onPressed: () async {
+                  output = await CompletionsApi.getNewForecast(
+                      textEditingController.text, 100);
+                  setState(() {
+                    output = output;
+                  });
+                },
+                child: Text("get output")),
+            Text(output == "" ? "Start Conversation" : output),
+          ],
         ),
       ),
     );

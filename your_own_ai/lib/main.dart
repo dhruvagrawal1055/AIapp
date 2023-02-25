@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:your_own_ai/Login_Signup/login.dart';
 import 'package:your_own_ai/Screens/Home.dart';
 import 'package:your_own_ai/Screens/chat_home.dart';
+import 'package:your_own_ai/Screens/img_home.dart';
 import 'package:your_own_ai/openAi/ImageGeneration/image_apicall.dart';
 
-import 'Screens/img_home.dart';
+// import 'Screens/img_home.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -27,7 +28,10 @@ class _MyAppState extends State<MyApp> {
     String image = '';
     var isloaded = false;
     return MaterialApp(
-      home: Home(),
+      debugShowCheckedModeBanner: false,
+      // home: loginScreen(),
+      // home: Home(),
+      home:img_home(),
       // home: chat_home(),
     );
   }
