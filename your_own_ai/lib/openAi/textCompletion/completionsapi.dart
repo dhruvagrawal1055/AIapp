@@ -62,7 +62,7 @@ class CompletionsApi {
       model: "text-davinci-003",
       prompt: text,
       maxTokens: maxTokens,
-      temperature: 2,
+      temperature: 0,
     );
 
     // debugPrint(

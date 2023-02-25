@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:your_own_ai/Screens/chat_home.dart';
 import 'package:your_own_ai/Screens/img_home.dart';
+import 'package:your_own_ai/Screens/img_home.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

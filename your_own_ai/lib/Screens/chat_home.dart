@@ -30,7 +30,7 @@ class _chat_homeState extends State<chat_home> {
             ElevatedButton(
                 onPressed: () async {
                   output = await CompletionsApi.getNewForecast(
-                      textEditingController.text, 20);
+                      textEditingController.text, 100);
                   setState(() {
                     output = output;
                   });
